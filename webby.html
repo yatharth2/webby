@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatharth Prasad - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Space Background */
+        .space-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            opacity: 0.8;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Moon */
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ccc 40%, #999 80%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Animated Rainbow Title */
+        h1 {
+            font-size: 50px;
+            padding: 20px 0;
+            background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: flicker 1.5s infinite alternate;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* Links Styling */
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .links a {
+            font-size: 14px;
+            color: #00ffcc;
+            text-decoration: none;
+            position: relative;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .links a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 18px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #ff00ff;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        /* List Items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #00ffcc;
+            text-decoration: underline;
+        }
+
+        ul li:hover {
+            color: #ff00ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Space Background -->
+    <div class="space-container"></div>
+
+    <!-- Moon -->
+    <div class="moon"></div>
+
+    <!-- Title -->
+    <h1>Yatharth Prasad</h1>
+    
+    <!-- GitHub & LinkedIn Links -->
+    <div class="links">
+        <a href="https://github.com/yatharth2" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yatharth-prasad-b57666262/" target="_blank">LinkedIn</a>
+    </div>
+
+    <p>B.Tech Student & IoT Innovator</p>
+
+    <!-- About Me -->
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I am Yatharth Prasad, a B.Tech student with a passion for building IoT solutions. I enjoy creating practical devices that solve real-world problems.</p>
+    </div>
+
+    <!-- Projects -->
+    <div class="container">
+        <h2>Projects</h2>
+        <ul>
+            <li onclick="openModal('smart-home')">Smart Home Automation System</li>
+            <li onclick="openModal('monitoring')">Environmental Monitoring Station</li>
+            <li onclick="openModal('healthcare')">IoT-Enabled Healthcare Device</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Yatharth Prasad</p>
+    </footer>
+
+    <!-- JavaScript for Space Animation -->
+    <script>
+        function generateStars() {
+            const space = document.querySelector('.space-container');
+            for (let i = 0; i < 150; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.top = Math.random() * window.innerHeight + "px";
+                space.appendChild(star);
+            }
+        }
+        
+        generateStars();
+    </script>
+
+</body>
+</html>
